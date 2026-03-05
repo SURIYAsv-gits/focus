@@ -1,57 +1,62 @@
-function generatePlan(){
-
-let subject=document.getElementById("subject").value
-let days=document.getElementById("days").value
-let hours=document.getElementById("hours").value
-
-let perDay=(hours/days).toFixed(1)
-
-document.getElementById("plan").innerText=
-"To master "+subject+" you should study "+perDay+
-" hours per day for "+days+" days."
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#1e1e2f,#3c3c6b);
+color:white;
+text-align:center;
+padding:40px;
 }
 
-let time=1500
-let interval
-
-function startTimer(){
-
-interval=setInterval(function(){
-
-let minutes=Math.floor(time/60)
-let seconds=time%60
-
-document.getElementById("timer").innerText=
-minutes+":"+(seconds<10?"0":"")+seconds
-
-time--
-
-if(time<0){
-clearInterval(interval)
-alert("Great job! Focus session completed.")
+.container{
+max-width:600px;
+margin:auto;
 }
 
-},1000)
+h1{
+font-size:40px;
+margin-bottom:5px;
 }
 
-function motivate(){
-
-let quotes=[
-
-"Success comes from daily discipline.",
-
-"Small progress is still progress.",
-
-"Focus today, succeed tomorrow.",
-
-"Consistency beats talent.",
-
-"Your future self will thank you."
-
-]
-
-let random=Math.floor(Math.random()*quotes.length)
-
-document.getElementById("quote").innerText=quotes[random]
-
+.tag{
+opacity:0.8;
 }
+
+.creator{
+font-size:14px;
+margin-bottom:30px;
+color:#ccc;
+}
+
+.box{
+background:rgba(255,255,255,0.1);
+padding:20px;
+margin:20px 0;
+border-radius:10px;
+}
+
+input{
+display:block;
+margin:10px auto;
+padding:10px;
+width:80%;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:5px;
+background:#ff9800;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff7300;
+}
+
+#timer{
+font-size:40px;
+margin:10px;
+}
+
